@@ -5,7 +5,9 @@ const ab = new Discord.MessageEmbed()
 .setColor('RANDOM')
 .setTitle('☂️Shaka bot moderasyon yardım menüsü')
 .addField('s+ban', 'etiketlediğiniz kişiyi banlar', true)
-
+.addField('Alan Başlığı', 'Alan Açıklama', true)
+.addField('Alan Başlığı', 'Alan Açıklama', true)
+.addField('Alan Başlığı', 'Alan Açıklama', true)
 
 
 
