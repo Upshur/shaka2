@@ -4,9 +4,9 @@ const ab = new Discord.MessageEmbed()
 .setTimestamp()
 .setColor('RANDOM')
 .setURL('https://discord.com/oauth2/authorize?client_id=890967082555019315&scope=bot&permissions=805314622')
-.setTitle('☂️Shaka bot kullanıcı yardım menüsü')
-.addField('s+avatar', 'etiketledğiniz kullanıcının avatarını atar', true)
-.addField('s+afk sebep', 'belirttiğiniz sebepten afk olursunuz.', true)
+.setTitle('☂️Shaka bot eğlence yardım menüsü')
+.addField('s+öp', 'etiketledğiniz kullanıcıyı öpersiniz', true)
+.addField('s+', 'belirttiğiniz sebepten afk olursunuz.', true)
 .addField('s+ping', 'botun pingini olçersiniz', true)
 .addField('s+sunucubilgi', 'sunucu hakkında bilgi verir', true)
 .addField('s+sunucuresmi', 'sunucunun resmini atar', true)
@@ -32,7 +32,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "kyardım",
+  name: "eyardım",
   description: "",
   usage: ""
 };
