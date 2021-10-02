@@ -283,61 +283,17 @@ client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ Maxy Sayaç Si
 
 })
 
-///resimli-hgbb
-
-client.on("guildMemberAdd", async member => {
-    let gkanal = await db.fetch('rgiris_'+member.guild.id)
-    const gözelkanal = member.guild.channels.get(gkanal)
-    if (!gözelkanal) return; //dcs ekibi
-     let username = member.user.username;
-        if (gözelkanal === undefined || gözelkanal === null) return;
-        if (gözelkanal.type === "text") {
-  
-          const bg = await Jimp.read("https://cdn.discordapp.com/attachments/596076560293953565/613821209880297502/giris_yapt.png");
-            const userimg = await Jimp.read(member.user.avatarURL);
-            var font;
-            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
-            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 430, 170, member.user.tag);
-            await userimg.resize(300, 300);
-            await bg.composite(userimg, 50, 20).write("./img/"+ member.id + ".png");
-              setTimeout(function () {
-                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              }, 10000);
-        }
-    })
-client.on("guildMemberRemove", async member => {
-   let gkanal = await db.fetch('rgiris_'+member.guild.id)
-    const gözelkanal = member.guild.channels.get(gkanal)
-    if (!gözelkanal) return; //dcs ekibi
-        let username = member.user.username;
-        if (gözelkanal === undefined || gözelkanal === null) return;
-        if (gözelkanal.type === "text") {              
-           const bg = await Jimp.read("https://cdn.discordapp.com/attachments/596076560293953565/613821573249499177/cksyapt.png");
-            const userimg = await Jimp.read(member.user.avatarURL);
-          var font;
-            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
-            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 430, 170, member.user.tag);
-            await userimg.resize(300, 300);
-            await bg.composite(userimg, 50, 20).write("./img/"+ member.id + ".png");
-              setTimeout(function () {
-                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              
-              }, 10000);
-        }
-    })    
-
-
-
+//fake ayrıl katıl
+client.on('message', async message => {
+if (message.content === 's+fake-katıl') { // - yerine prefixi yaz
+  client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
+    }
+});
+client.on('message', async message => {
+    if (message.content === 's+fake-ayrıl') { // - yerine prefixi yaz
+        client.emit('guildMemberRemove', message.member || await message.guild.fetchMember(message.author));
+    }
+});
 
 
 
