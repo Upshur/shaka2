@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 var prefix = ayarlar.prefix;
 exports.run = (client, message, params) => {
-let davet = ""//botunuzun davet linki
-let destek = ""//destek sunucusu linki
+let davet = "https://discord.com/oauth2/authorize?client_id=890967082555019315&scope=bot&permissions=268967998"//botunuzun davet linki
+let destek = "https://discord.gg/wvDQDYs2Gr"//destek sunucusu linki
 let dbl = ""//botunuz dbl ye ekli ise dbl profil linki
 let site = ""//varsa site linki
     const DarkCode = new Discord.RichEmbed()
@@ -25,7 +25,7 @@ let site = ""//varsa site linki
 
 »s+seviye-xp :: xp nizi gosterir
 
- **Botun Davet Linki İçin** [TIKLA](https://discord.com/api/oauth2/authorize?client_id=764173042510463006&permissions=8&scope=bot) \n  **Destek Sunucusu İçin** [TIKLA]() \n  **Web Sitemizi Ziyaret etmek İçin** [TIKLA](https://elma-bot-discord-.glitch.me/)
+ **Botun Davet Linki İçin** [TIKLA](https://discord.com/oauth2/authorize?client_id=890967082555019315&scope=bot&permissions=268967998) \n  **Destek Sunucusu İçin** [TIKLA](https://discord.gg/wvDQDYs2Gr) \n  **Web Sitemizi Ziyaret etmek İçin** [TIKLA]()
 `)
 .setImage(`https://i.giphy.com/zN06pgHHndFGfLf9GT.gif`)
 

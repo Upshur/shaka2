@@ -128,6 +128,7 @@ client.on("guildMemberAdd", async(member, message, msg) => {
   }
 });
 
+///kanal-koruma
 
 
 
