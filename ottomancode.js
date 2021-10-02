@@ -295,6 +295,7 @@ client.on('message', async message => {
     }
 });
 
+///sunucutanıt
 
 
 
