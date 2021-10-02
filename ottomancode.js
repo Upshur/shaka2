@@ -130,8 +130,52 @@ client.on("guildMemberAdd", async(member, message, msg) => {
 
 ///kanal-koruma
 
+//KanalKoruma
 
+client.on("channelDelete", async function(channel) {
+    let rol = await db.fetch(`kanalk_${channel.guild.id}`);
+  
+  if (rol) {
+const guild = channel.guild.cache;
+let channelp = channel.parentID;
 
+  channel.clone().then(z => {
+    let kanal = z.guild.channels.find(c => c.name === z.name);
+    kanal.setParent(
+      kanal.guild.channels.find(channel => channel.id === channelp)
+      
+    );
+  });
+  }
+})
+
+///eklendim-atıldım
+
+client.on("guildCreate", async function(guild) {
+const owner = client.users.cache.get(guild.ownerID)
+const kanal = "881947004253667389" //Eklendim mesajının atılacağı kanal ID'sini giriniz.
+const ottoman = new Discord.MessageEmbed()
+.setTitle(`Yeni bir sunucuya eklendim`)
+.setColor("BLACK")
+.addField(`Sunucu Adı`, guild.name)
+.addField(`Sunucu Sahibi`, owner.username + "#" +owner.discriminator)
+.addField(`Sunucu Üye Sayısı`, guild.memberCount)
+client.channels.cache.get(kanal).send({embed: ottoman}).catch(err => console.log("Kanala mesaj atamıyorum!"))
+})
+//
+  
+//Atıldım
+client.on("guildDelete", async function(guild) {
+const owner = client.users.cache.get(guild.ownerID)
+const kanal = "881947004253667389" //Atıldım mesajının atılacağı kanal ID'sini giriniz.
+const ottoman = new Discord.MessageEmbed()
+.setTitle(`Bir sunucudan atıldım`)
+.setColor("BLACK")
+.addField(`Sunucu Adı`, guild.name)
+.addField(`Sunucu Sahibi`, owner.username + "#" + owner.discriminator)
+.addField(`Sunucu Üye Sayısı`, guild.memberCount)
+client.channels.cache.get(kanal).send({embed: ottoman}).catch(err => console.log("Kanala mesaj atamıyorum!"))
+})
 
 
 
