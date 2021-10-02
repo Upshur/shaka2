@@ -231,7 +231,7 @@ client.channels.cache.get(sayaçk).send(`Tebrikler! Sunucunuz başarıyla ayarla
 db.delete(`ottoman.sayaç_${member.guild.id}`)
 db.delete(`ottoman.sayaçk_${member.guild.id}`)
 } else {
-client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ Maxy Sayaç Sistemi     ▬▬▬▬▬▬▬▬▬
+client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ ☂️𝐒𝐡𝐚𝐤𝐚☂️Sayaç Sistemi     ▬▬▬▬▬▬▬▬▬
 ║İşte Karşısınızda **${member}** Giriş Yaptı
 ║**${sayaç}** Kişi Olmamıza **${sayaç - member.guild.memberCount}** Kişi Kaldı
 ║Seninle Beraber **${member.guild.memberCount}** Kişiyiz !
@@ -252,7 +252,7 @@ client.channels.get(sayaçk).send(`Tebrikler! Sunucunuz başarıyla ayarlanmış
 db.delete(`ottoman.sayaç_${member.guild.id}`)
 } else {
    
-client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ Maxy Sayaç Sistemi ▬▬▬▬▬▬▬▬▬
+client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ ☂️𝐒𝐡𝐚𝐤𝐚☂️Sayaç Sistemi ▬▬▬▬▬▬▬▬▬
 ║**${member}** Aramızdan Ayrıldı
 ║**${sayaç}** Kişi Olmamıza **${sayaç - member.guild.memberCount}** Kişi Kaldı
 ║Toplam **${member.guild.memberCount}** Kişiyiz !
