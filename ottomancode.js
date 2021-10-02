@@ -1,3 +1,4 @@
+const { MessageEmbed } = require("discord.js");
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
@@ -176,6 +177,144 @@ const ottoman = new Discord.MessageEmbed()
 .addField(`Sunucu Üye Sayısı`, guild.memberCount)
 client.channels.cache.get(kanal).send({embed: ottoman}).catch(err => console.log("Kanala mesaj atamıyorum!"))
 })
+
+///otorol
+
+client.on("guildMemberAdd", async member => {
+  
+ let kanal = db.fetch(`codwakanal_${member.guild.id}`)   
+ let rol = db.fetch(`codwarol_${member.guild.id}`)
+ let mesaj = db.fetch(`codwamesaj_${member.guild.id}`)
+  
+if(!kanal) return
+member.roles.add(rol)
+  client.channels.cache.get(kanal).send(':loudspeaker: :inbox_tray: Otomatik Rol Verildi Seninle Beraber **`'+member.guild.memberCount+'`** Kişiyiz!  Hoşgeldin! **`'+member.user.username+'`**')
+
+});
+
+///dm-hg
+
+client.on("guildMemberAdd", member => {
+  const hosgeldin = new Discord.MessageEmbed()
+  
+   .setColor('#8A2BE2')
+   .setTitle('Sunucumuza Hoşgeldin')
+   .setDescription(`・ Sunucumuza geldiğin için teşekkür ederiz.`)
+   .setTimestamp()
+   .setFooter('☂️𝐒𝐡𝐚𝐤𝐚☂️')
+  member.send(hosgeldin)
+  });
+
+///sa-as
+
+client.on("message", async (message, member, guild) => {
+  let ottoman = await db.fetch(`saas_${message.guild.id}`);
+  if (ottoman === "açık") {
+    if (message.content.toLowerCase() === "sa") {
+message.channel.send(new MessageEmbed()
+.setDescription(`Aleyküm Selam`)
+.setColor('#8A2BE2')).then(x => x.delete({timeout: 5000}));    }
+//OTTOMAN CODE
+  }
+});
+
+///sayaç
+
+client.on('guildMemberAdd', async member => {
+let sayaç = db.fetch(`ottoman.sayaç_${member.guild.id}`)
+let sayaçk = db.fetch(`ottoman.sayaçk_${member.guild.id}`)
+if(!sayaç) return;
+if(!sayaçk) return;
+if(member.guild.memberCount >= sayaç) {
+
+client.channels.cache.get(sayaçk).send(`Tebrikler! Sunucunuz başarıyla ayarlanmış olan \`${sayaç}\` kişiye ulaştı. Sayaç sistemi sıfırlandı.`)
+db.delete(`ottoman.sayaç_${member.guild.id}`)
+db.delete(`ottoman.sayaçk_${member.guild.id}`)
+} else {
+client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ Maxy Sayaç Sistemi     ▬▬▬▬▬▬▬▬▬
+║İşte Karşısınızda **${member}** Giriş Yaptı
+║**${sayaç}** Kişi Olmamıza **${sayaç - member.guild.memberCount}** Kişi Kaldı
+║Seninle Beraber **${member.guild.memberCount}** Kişiyiz !
+╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
+
+
+}
+})
+
+client.on('guildMemberRemove', async member => {
+let sayaç = db.fetch(`ottoman.sayaç_${member.guild.id}`)
+let sayaçk = db.fetch(`ottoman.sayaçk_${member.guild.id}`)
+if(!sayaç) return;
+if(!sayaçk) return;
+if(member.guild.memberCount >= sayaç) {
+
+client.channels.get(sayaçk).send(`Tebrikler! Sunucunuz başarıyla ayarlanmış olan \`${sayaç}\` kişiye ulaştı. Sayaç sistemi sıfırlandı.`)
+db.delete(`ottoman.sayaç_${member.guild.id}`)
+} else {
+   
+client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ Maxy Sayaç Sistemi ▬▬▬▬▬▬▬▬▬
+║**${member}** Aramızdan Ayrıldı
+║**${sayaç}** Kişi Olmamıza **${sayaç - member.guild.memberCount}** Kişi Kaldı
+║Toplam **${member.guild.memberCount}** Kişiyiz !
+╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
+}
+
+})
+
+///küfür-engel
+
+  const ottomandb = require('quick.db')
+    client.on("message" , async (message, member, guild) => {
+    let ottoman = await ottomandb.fetch(`ottomanküfürengel_${message.guild.id}`)
+    if(!ottoman) return;
+    let kelimeler = message.content.slice(" ").split(/ +/g)
+    let ottomanküfürler = ["oç","am","göt","orusbu","sikim","porno","anneni","amk","yarrak", "amq", "piç"]
+    if (ottomanküfürler.some(word => message.content.toLowerCase().includes(word))) {
+    if (message.member.hasPermission("BAN_MEMBERS")) return;
+    message.delete()
+    message.channel.send('küfür yasak').then(x => x.delete({timeout: 3000}));}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
