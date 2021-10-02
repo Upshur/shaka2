@@ -274,8 +274,14 @@ client.channels.cache.get(sayaçk).send(`╔▬▬▬▬▬▬▬ Maxy Sayaç Si
     message.delete()
     message.channel.send('küfür yasak').then(x => x.delete({timeout: 3000}));}})
 
+///snipe
 
+  client.on('messageDelete', message => {
+  const data = require("quick.db")
+  data.set(`snipe.mesaj.${message.guild.id}`, message.content)
+  data.set(`snipe.id.${message.guild.id}`, message.author.id)
 
+})
 
 
 
