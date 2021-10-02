@@ -8,7 +8,7 @@ if(!message.member.roles.cache.has('Kullanabilecek Rol ID') && !message.member.h
 
  client.channels.cache.get(kanal).join();
 
-message.channel.send("Başarıyla Ses Kanalına Girdim!")
+message.channel.send("<:53b25c714fc14921a390f0f7b8ad034e:876838546709807105>Başarıyla Ses Kanalına Girdim!")
 
 };
 
