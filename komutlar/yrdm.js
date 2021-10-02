@@ -20,8 +20,8 @@ const ab = new Discord.MessageEmbed()
 .addField('s+fakehesap-ayar', 'fake hesap korumasıdır', true)
 .addField('s+isim-değiştir', 'istediğiniz kullanıcının ismini değiştirir', true)
 .addField('s+sa-as', 'sa-as aktif veya deaktif eder', true)
-.setImage(" ")
-
+.setImage("https://cdn.discordapp.com/attachments/856935661902626848/893872633064615967/Shaka.png")
+.setThumbnail("https://cdn.discordapp.com/attachments/856935661902626848/893872633064615967/Shaka.png")
 
 
 
@@ -52,7 +52,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "yardım",
+  name: "myardım",
   description: "",
   usage: ""
 };
