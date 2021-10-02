@@ -7,6 +7,7 @@ dependencies:
   moment: 2.26.0
   ms: 2.1.3
   quick.db: 7.1.1
+  randomstring: 1.2.1
   snekfetch: 4.0.4
 packages:
   /@babel/runtime/7.10.2:
@@ -492,6 +493,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /array-uniq/1.0.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-X8w3OSB3VyPP1k1lxkvvU7+eum0=
   /asynckit/0.4.0:
     dev: false
     resolution:
@@ -1281,6 +1288,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-PziF96cxYNvHcgkZkEbZ3UzhR2bXcLff96n68J1DhE/2Q2ELeGnd/Z4jtqJqZz5rfiqXvzEbCznXV8wNsOTSww==
+  /randombytes/2.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-Z0yZdgkBw8QRJ3GjHlIdw0nMCew=
+  /randomstring/1.2.1:
+    dependencies:
+      array-uniq: 1.0.2
+      randombytes: 2.0.3
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-eMnfell9XuU3jfCx3f4xCaFAt0YMFPZhx9R3PSStmLarDKg5j5vivqKhf/8pvG+VX/YkxsckHK/VPUrKa5V07A==
   /range-parser/1.2.1:
     dev: false
     engines:
@@ -1653,4 +1672,5 @@ specifiers:
   moment: ^2.26.0
   ms: ^2.1.3
   quick.db: ^7.1.1
+  randomstring: ^1.2.1
   snekfetch: ^4.0.4
