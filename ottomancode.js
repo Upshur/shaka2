@@ -44,16 +44,89 @@ fs.readdir('./komutlar/', (err, files) => {
     });
 });
 
-//bot-seste
+//afk
+
+client.on("message" , async msg => {
+  
+  if(!msg.guild) return;
+  if(msg.content.startsWith(ayarlar.prefix+"afk")) return; 
+  
+  let afk = msg.mentions.users.first()
+  
+  const kisi = db.fetch(`afkid_${msg.author.id}_${msg.guild.id}`)
+  
+  const isim = db.fetch(`afkAd_${msg.author.id}_${msg.guild.id}`)
+ if(afk){
+   const sebep = db.fetch(`afkSebep_${afk.id}_${msg.guild.id}`)
+   const kisi3 = db.fetch(`afkid_${afk.id}_${msg.guild.id}`)
+   if(msg.content.includes(kisi3)){
+
+       msg.reply(`Etiketlediğiniz Kişi Afk \nSebep : ${sebep}`)
+   }
+ }
+  if(msg.author.id === kisi){
+
+       msg.reply(`Afk'lıktan Çıktınız`)
+   db.delete(`afkSebep_${msg.author.id}_${msg.guild.id}`)
+   db.delete(`afkid_${msg.author.id}_${msg.guild.id}`)
+   db.delete(`afkAd_${msg.author.id}_${msg.guild.id}`)
+    msg.member.setNickname(isim)
+    
+  }
+  
+});
 
 
+///etiket-prefix
+
+client.on('message', message => {
+if (message.mentions.users.first()) { if (message.mentions.users.first().id === client.user.id){
+message.channel.send(`Buyur prefixim ${prefix}`)
+}}});
 
 
+///fake-hesap
 
 
+client.on("guildMemberAdd", async(member, message, msg) => {
+ const fakehesapp = db.get(`fake_${member.guild.id}`)
+
+  if(fakehesapp == "açık"){
+  var moment = require("moment");
+  require("moment-duration-format");
+  moment.locale("tr");
+  var { Permissions } = require("discord.js");
+  var x = moment(member.user.createdAt)
+    .add(20, "days")
+    .fromNow();
+  var user = member.user;
+  x = x.replace("birkaç saniye önce", " ");
+  if (!x.includes("önce") || x.includes("sonra") || x == " ") {
+    let rol = db.get(`fakerol_${member.guild.id}`);
 
 
+    member.user.send(
+          "Hesabınız 20 günden önce açıldığı için cezalıya atıldınız, yetkililere bildirerek açtırabilirsiniz.");
 
+    ////////////////
+    let kanalcık = await db.fetch(`fakekanal_${member.guild.id}`);
+    let kanal = member.guild.channels.find(r => r.id === kanalcık);
+    ////////////////
+    const embedd = new Discord.RichEmbed()
+
+      .setTitle("Fake hesap yakalandı!!")
+      .setTimestamp()
+      .setDescription(
+        `Bir fake hesap sisteme yakalandı ve rolü verildi. **${member}**`
+      )
+      .setTimestamp()
+      .setColor("RED");
+    kanal.send(embedd);
+    member.addRole(rol);
+  } else {
+  }
+  }
+});
 
 
 
