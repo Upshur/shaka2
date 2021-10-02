@@ -4,8 +4,8 @@ const ab = new Discord.MessageEmbed()
 .setTimestamp()
 .setColor('RANDOM')
 .setTitle('☂️Shaka bot yardım menüsü')
-.setTitle('☂️Prefix')
-.addField('myardım', 'etiketlediğiniz kişiyi banlar', true)
+.setTitle('☂️Prefix:s+')
+.addField('myardım', 'moderasyon yardım menüsünü açar', true)
 .addField('s+otorol-ayarla', 'otorolü açmanızı sağlar.', true)
 .addField('s+otorol-kapat', 'otorolü kapatmanızı sağlar', true)
 .addField('s+herkeserolver @rol', 'herkese rol verir', true)
@@ -28,7 +28,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "myardım",
+  name: "yardım",
   description: "",
   usage: ""
 };
