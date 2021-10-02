@@ -46,10 +46,6 @@ fs.readdir('./komutlar/', (err, files) => {
 
 //bot-seste
 
-client.on("ready", () => {
-client.channels.cache.get('883211955161157673').join();
-});
-
 
 
 
