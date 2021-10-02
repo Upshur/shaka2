@@ -8,12 +8,12 @@ const ab = new Discord.MessageEmbed()
 .addField('s+otorol-ayarla', 'otorolü açmanızı sağlar.', true)
 .addField('s+otorol-kapat', 'otorolü kapatmanızı sağlar', true)
 .addField('s+herkeserolver @rol', 'herkese rol verir', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
+.addField('s+herkestenrolal @rol', 'herkesten rol alır', true)
+.addField('s+küfür-ayarla aç,kapat', 'küfür engel açıp kapama', true)
+.addField('s+kick' ,'etiketlediğiniz kişiyi atar', true)
+.addField('s+allsesçıkar', 'seste bulunan tüm kullanıcıları çıkarır', true)
+.addField('s+snipe', 'silinen mesajı gosterir', true)
+.addField('s+sayaç #Kanal <Sayı>', 'sayaç ayarlar', true)
 .addField('Alan Başlığı', 'Alan Açıklama', true)
 .addField('Alan Başlığı', 'Alan Açıklama', true)
 
@@ -49,7 +49,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "taslak",
+  name: "yardım",
   description: "",
   usage: ""
 };
