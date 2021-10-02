@@ -14,10 +14,13 @@ const ab = new Discord.MessageEmbed()
 .addField('s+allsesçıkar', 'seste bulunan tüm kullanıcıları çıkarır', true)
 .addField('s+snipe', 'silinen mesajı gosterir', true)
 .addField('s+sayaç #Kanal <Sayı>', 'sayaç ayarlar', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
-.addField('Alan Başlığı', 'Alan Açıklama', true)
-
-
+.addField('s+aç', 'kanal kilidini açar', true)
+.addField('s+kapat', 'kanalı kilitler', true)
+.addField('s+kanal-koruma', 'kanal korumayı aktif veya deaktif eder', true)
+.addField('s+fakehesap-ayar', 'fake hesap korumasıdır', true)
+.addField('s+isim-değiştir', 'istediğiniz kullanıcının ismini değiştirir', true)
+.addField('s+sa-as', 'sa-as aktif veya deaktif eder', true)
+.setImage(" ")
 
 
 
