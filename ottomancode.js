@@ -80,10 +80,6 @@ client.on("message" , async msg => {
 
 ///etiket-prefix
 
-client.on('message', message => {
-if (message.mentions.users.first()) { if (message.mentions.users.first().id === client.user.id){
-message.channel.send(`Buyur prefixim ${prefix}`)
-}}});
 
 
 ///fake-hesap
@@ -309,7 +305,14 @@ message.react("✅")
 }
 })
 
+//etkt prefix
 
+client.on("message", async msg => { 
+const as = require('./ayarlar.json')
+const dcskelime = [client.user.id, client.user.username, "<@"+client.user.id+">"]; 
+if (dcskelime.some(dcss => msg.content.includes(dcss))) {
+msg.reply("Prefixim: "+as.prefix) 
+}})  
 
 
 
