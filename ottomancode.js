@@ -297,8 +297,17 @@ client.on('message', async message => {
     }
 });
 
-///sunucutanıt
+///
 
+client.on("message", async message => {
+if(message.guild.id === "844184868111777812"){
+if(message.channel.id === "895080853112242276"){
+
+message.member.setNickname(message.content)
+message.react("✅") 
+}
+}
+})
 
 
 
