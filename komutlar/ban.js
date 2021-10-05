@@ -23,7 +23,7 @@ var prefix = ayarlar.prefix;
    if (!message.guild.member(user).bannable) return message.channel.send('Sunucudaki yetkilileri yasaklayamam!');
 
   message.guild.members.ban(user.id)
-  message.channel.send(`<@${user.id}> **Adlı kullanıcı yasaklandı!** **Sebep: \`${reason}\`**`)
+  message.channel.send(`<:banke:895071589069099078><@${user.id}> **Adlı kullanıcı yasaklandı!** **Sebep: \`${reason}\`**`)
 
 };
 
