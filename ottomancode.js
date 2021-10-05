@@ -188,7 +188,7 @@ client.on("guildMemberAdd", async member => {
   
 if(!kanal) return
 member.roles.add(rol)
-  client.channels.cache.get(kanal).send(':loudspeaker: :inbox_tray: Otomatik Rol Verildi Seninle Beraber **`'+member.guild.memberCount+'`** Kişiyiz!  Hoşgeldin! **`'+member.user.username+'`**')
+  client.channels.cache.get(kanal).send('<:hg:895056890319495190> :inbox_tray: Otomatik Rol Verildi Seninle Beraber **`'+member.guild.memberCount+'`** Kişiyiz!  Hoşgeldin! **`'+member.user.username+'`**')
 
 });
 
@@ -199,7 +199,7 @@ client.on("guildMemberAdd", member => {
   
    .setColor('#8A2BE2')
    .setTitle('Sunucumuza Hoşgeldin')
-   .setDescription(`・ Sunucumuza geldiğin için teşekkür ederiz.`)
+   .setDescription(`<:hg:895056890319495190> Sunucumuza geldiğin için teşekkür ederiz.`)
    .setTimestamp()
    .setFooter('☂️𝐒𝐡𝐚𝐤𝐚☂️')
   member.send(hosgeldin)
@@ -232,11 +232,11 @@ db.delete(`ottoman.sayaç_${member.guild.id}`)
 db.delete(`ottoman.sayaçk_${member.guild.id}`)
 } else {
 client.channels.cache.get(sayaçk).send(`
-╔▬▬▬▬▬▬▬☂️𝐒𝐡𝐚𝐤𝐚☂️Sayaç Sistemi▬▬▬▬▬▬▬▬▬
-║İşte Karşısınızda **${member}** Giriş Yaptı
+╔▬▬▬▬▬▬▬☂️𝐒𝐡𝐚𝐤𝐚☂️Sayaç Sistemi▬▬▬▬▬▬
+║<:hg:895056890319495190>İşte Karşısınızda **${member}** Giriş Yaptı
 ║**${sayaç}** Kişi Olmamıza **${sayaç - member.guild.memberCount}** Kişi Kaldı
 ║Seninle Beraber **${member.guild.memberCount}** Kişiyiz !
-╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
+╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
 
 
 }
@@ -254,11 +254,11 @@ db.delete(`ottoman.sayaç_${member.guild.id}`)
 } else {
    
 client.channels.cache.get(sayaçk).send(`
-╔▬▬▬▬▬▬▬☂️𝐒𝐡𝐚𝐤𝐚☂️Sayaç Sistemi▬▬▬▬▬▬▬▬▬
-║**${member}** Aramızdan Ayrıldı
+╔▬▬▬▬▬▬▬☂️𝐒𝐡𝐚𝐤𝐚☂️Sayaç Sistemi▬▬▬▬▬▬▬
+║<:bb:895058030385827870> **${member}** Aramızdan Ayrıldı
 ║**${sayaç}** Kişi Olmamıza **${sayaç - member.guild.memberCount}** Kişi Kaldı
 ║Toplam **${member.guild.memberCount}** Kişiyiz !
-╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
+╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
 }
 
 })
