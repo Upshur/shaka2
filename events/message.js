@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const ayarlar = require('../ayarlar.json');
 let talkedRecently = new Set();
+const db = require("orio.db");
+
 
 module.exports = message => {
   if (talkedRecently.has(message.author.id)) {
@@ -32,6 +34,19 @@ module.exports = message => {
                 return
       }
     }
+    
+     var data = db.get(`blacklist.${message.author.id}`);
+
+    if (data === true) return message.channel.send("Sen blackliste bulunuyorsun bot komutlarını kullanamazsın.")
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     if (cmd.conf.permLevel === 1) {
 			if (!message.member.hasPermission("MANAGE_MESSAGES")) {
