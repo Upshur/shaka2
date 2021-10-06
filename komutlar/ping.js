@@ -28,7 +28,7 @@ exports.run = async (app, message, client) => {
 
         const embed = new Discord.MessageEmbed()
 
-        .setDescription(`**Supra BOT**\nMesaj gecikme süresi; **${diff}ms** \n\n **Supra BOT**\nBot gecikme süresi; **${API}ms**`)
+        .setDescription(`**Shaka BOT**\n<:odekk:895053305049382932>Mesaj gecikme süresi; **${diff}ms** \n\n **Shaka BOT**\n<:odekk:895053305049382932>Bot gecikme süresi; **${API}ms**`)
 
         mesaj.edit(embed);
 
