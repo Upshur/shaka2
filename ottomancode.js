@@ -338,9 +338,7 @@ if (dcskelime.some(dcss => msg.content.includes(dcss))) {
 msg.reply("Prefixim: "+as.prefix) 
 }})  
 
-
-
-
+///resimli-rank
 
 
 

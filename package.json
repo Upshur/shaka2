@@ -24,7 +24,8 @@
     "dabi-images": "^2.7.5",
     "superagent": "^6.1.0",
     "discord-buttons": "^4.0.0",
-    "narcos-db": "^4.0.10"
+    "narcos-db": "^4.0.10",
+    "discord-xp": "^1.1.16"
   },
   "engines": {
     "node": "12.x"
