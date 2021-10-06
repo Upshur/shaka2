@@ -78,8 +78,26 @@ client.on("message" , async msg => {
 });
 
 
-///etiket-prefix
-
+///sunucu-tanıt
+client.on("ready", async () => {
+  let csdb = require("croxydb")
+  setInterval(() => {
+    
+  client.guilds.cache.map(cs => {
+    
+  let csv = csdb.get("sunucutanit."+cs.id)
+    if(csv){
+      
+      let time = Date.now() - csv.zaman
+      let sure = csv.sure
+      
+      if(time >= sure){
+        csdb.delete("sunucutanit."+cs.id)
+      }
+    }
+  })
+  }, 300000)
+})   
 
 
 ///fake-hesap
