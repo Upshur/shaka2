@@ -143,8 +143,14 @@ client.on("guildMemberAdd", async(member, message, msg) => {
   }
 });
 
-///kanal-koruma
+///bot durum
 
+ client.on("ready", async () => {
+   log("Durum başarıyla ayarlandı")
+      client.user.setActivity("@Shaka", 
+        { url: 'https://twitch.tv/aesthosz.',
+        type: 'STREAMING' }); 
+})
 //KanalKoruma
 
 client.on("channelDelete", async function(channel) {
