@@ -4,18 +4,19 @@ const DabiClient = new DabiImages.Client();
 const data = require('croxydb')
 
 
+
 exports.run = async (client, message, args) => {
 if(message.channel.nsfw == false) return message.channel.send(new Discord.MessageEmbed()
                                                               .setTitle('Bir hata oldu!')
 .setImage('https://cdn.discordapp.com/attachments/773087334140739597/773546087504019486/Adsz.png')
                                                               .setDescription(`${message.author} **Kanal __NSFW__ olarak aktif değil. Kontrol et!**`).
           setColor('#00001'))
-if(await data.fetch(`slm.${message.author.id}.${message.guild.id}.ass`)) return message.channel.send(new Discord.MessageEmbed().setColor('#00001').setDescription(`**2 saniyenin altında hızlı kullanamazsın!**`));
-DabiClient.nsfw.hentai.ass().then(json => {
+if(await data.fetch(`slm.${message.author.id}.${message.guild.id}.panties`)) return message.channel.send(new Discord.MessageEmbed().setColor('#00001').setDescription(`**2 saniyenin altında hızlı kullanamazsın!**`));
+DabiClient.nsfw.real.panties().then(json => {
 message.channel.send(new Discord.MessageAttachment(json.url));
-data.set(`slm.${message.author.id}.${message.guild.id}.ass`, 'rawibot');
+data.set(`slm.${message.author.id}.${message.guild.id}.panties`, 'rawibot');
 setTimeout(() => {
-data.delete(`slm.${message.author.id}.${message.guild.id}.ass`)
+data.delete(`slm.${message.author.id}.${message.guild.id}.panties`)
 }, 2000);
 })
 };
@@ -27,5 +28,5 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'hentai-ass'
+  name: 'panties'
 };
