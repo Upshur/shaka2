@@ -11,7 +11,7 @@ const ottoman = new Discord.MessageEmbed()
  .addField(` » Kanal Sayısı`, `${client.channels.cache.size  }`, true)
  .addField(` » Kullanıcı Sayısı`, `${client.users.cache.size}`, true)
  .addField(` » Sunucu Sayısı`, `${client.guilds.cache.size}`, true)
- .addField(`» Linkler`, `[Destek Sunucusu](DESTEK SUNUCUNUZ) | [Davet](DAVET LİNKİNİZ)`, true)
+ .addField(`» Linkler`, `[Destek Sunucusu](https://discord.gg/wvDQDYs2Gr) | [Davet](https://shaka-ste.glitch.me/anamenü.html#)`, true)
   message.channel.send(ottoman)
   
   
