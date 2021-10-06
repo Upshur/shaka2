@@ -20,7 +20,9 @@
     "randomstring": "^1.2.1",
     "axios": "^0.22.0",
     "orio.db": "^2.1.4",
-    "croxydb": "^0.0.7"
+    "croxydb": "^0.0.7",
+    "dabi-images": "^2.7.5",
+    "superagent": "^6.1.0"
   },
   "engines": {
     "node": "12.x"
