@@ -338,9 +338,16 @@ if (dcskelime.some(dcss => msg.content.includes(dcss))) {
 msg.reply("Prefixim: "+as.prefix) 
 }})  
 
-///resimli-rank
+///kara-liste
 
-
+client.on("guildMemberAdd", member => {
+  if(require('quick.db').has(`karaliste_${member.guild.id}.${member.user.id}`)){
+    member.send({embed: {color: "BLACK", description: `Karalistede bulunduğun için seni ${member.guild.name} isimli sunucudan banladım.`}})
+    var banned = member.guild.members.cache.get(member.user.id)
+    member.guild.owner.send({embed: {color: "BLACK", description: `${member.user.id} ID'li kişi sunucunuza katıldı! Karalistede olduğu için sunucudan banlandı!`}})
+    banned.ban()
+  }
+})
 
 
 
