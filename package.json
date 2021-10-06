@@ -22,7 +22,8 @@
     "orio.db": "^2.1.4",
     "croxydb": "^0.0.7",
     "dabi-images": "^2.7.5",
-    "superagent": "^6.1.0"
+    "superagent": "^6.1.0",
+    "discord-buttons": "^4.0.0"
   },
   "engines": {
     "node": "12.x"

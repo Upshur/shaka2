@@ -4,6 +4,7 @@ dependencies:
   common-tags: 1.8.0
   croxydb: 0.0.7
   dabi-images: 2.7.5
+  discord-buttons: 4.0.0
   discord.js: 12.2.0
   express: 4.17.1
   jimp: 0.12.1
@@ -758,6 +759,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
+  /discord-buttons/4.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-E/eQX4Ktj7nKwNDsTfCezBNCu73FtPWJfQcpKohfl0jct/ucMUO+7uhL2MhGsZr4SCfojk7OzccAznuntB564w==
   /discord.js/12.2.0:
     dependencies:
       '@discordjs/collection': 0.1.5
@@ -1908,6 +1913,7 @@ specifiers:
   common-tags: ^1.8.0
   croxydb: ^0.0.7
   dabi-images: ^2.7.5
+  discord-buttons: ^4.0.0
   discord.js: ^12.2.0
   express: ^4.17.1
   jimp: ^0.12.1
